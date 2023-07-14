@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card">
+    <div class="card-body">
+        <h1 class="card-title">{{post.title}}</h1>
+        <h6><i>By: {{post.author}}</i> </h6>
+        <div class="d-flex gap-2">
+            <a class="btn btn-success rounded-pill px-3" type="button" href="{% url 'post_edit' post.pk %}">Edit</a>
+            <a class="btn btn-danger rounded-pill px-3" type="button" href="{% url 'post_delete' post.pk %}">Delete</a>
+        </div>
+        <p class="card-text p-4">{{post.content}}</p>
+    </div>
+</div>
+{% endblock %}
